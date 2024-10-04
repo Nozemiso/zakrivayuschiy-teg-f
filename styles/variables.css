@@ -11,6 +11,8 @@
     --background-line-color: #ddd;
     --main-color: #000;
 
+    --heart-color: #f00;
+
     --background-image: 
         repeating-linear-gradient(
             transparent 0 2px,
