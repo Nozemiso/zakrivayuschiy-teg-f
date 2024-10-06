@@ -82,7 +82,7 @@
         </ul>
       </li>
     </main>
-    <button class="save__button basic-button">
+    <button class="save__button basic-button" onclick="window.saveDialog.showModal()">
       <div class="basic-button__content">
       <svg class="save__picture">
         <use href="./svg/floppy.svg#floppy">
@@ -91,5 +91,22 @@
     </div>
     </button>
     <script src="./scripts/like.js"></script>
+    <dialog id="saveDialog" class="save-dialog card">
+        <div class="save-dialog__content">
+          <svg viewbox="0 0 21 21" class="save-dialog__picture">
+            <use href="./svg/floppy.svg#floppy">
+          </svg>
+          <p class="save-dialog__text">
+            Вставьте
+            дискету, чтобы продолжить
+          </p>
+        </div>
+        <button onclick="window.saveDialog.close()" class="save-dialog__button basic-button">
+          <div class="basic-button__content">
+            Ок
+          </div>
+        </button>
+      </div>      
+    </dialog>
   </body>
 </html>

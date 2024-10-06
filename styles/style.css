@@ -17,6 +17,9 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+
+  display: flex;
+  flex-direction: column;
   margin: auto;
   inline-size: fit-content;
 
@@ -230,6 +233,7 @@
   justify-content: center;
   position: relative;
   z-index: 1;
+  transition: 0.5s ease-in-out;
 }
 
 .basic-button::before {
@@ -275,3 +279,51 @@
   margin-right: 8px;
 }
 
+.save-dialog {
+  margin: auto;
+  padding: 30px;
+  width: fit-content;
+
+  color: var(--main-color);
+
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+}
+
+@media (width < 1440px) {
+  .save-dialog {
+    padding: 30px 40px;
+  }
+}
+
+.save-dialog__content {
+  margin-block-end: 30px;
+  display: flex;
+  align-items: center;
+  height: 63px;
+  width: fit-content;
+  gap: 20px;
+}
+
+.save-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.save-dialog__picture {
+  width: 39px;
+  height: 39px;
+  background-size: cover;
+  display: block;
+  fill: var(--main-color)
+}
+
+.save-dialog__text {
+  display: block;
+  width: clamp(12.375rem, 3.38vw + 11.583rem, 14.625rem);
+}
+
+.save-dialog__button {
+  padding: 9px 17px;
+  text-transform: uppercase;
+  width: 100%; 
+}
