@@ -151,6 +151,31 @@
   border-bottom: 2px solid var(--main-color);
 }
 
+.card__picture-wrapper {
+  position: relative;
+}
+
+.card__picture-label {
+  position: absolute;
+  inset: 25px clamp(0.813rem, 1.127vw + 0.548rem, 1.563rem) auto auto;
+  font-family: var(--accent-font-family);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+
+
+}
+
+@supports (text-shadow: none) {
+  .card__picture-label {
+    text-shadow:
+      var(--background-color) 1px 1px,
+      var(--background-color) -1px -1px,
+      var(--background-color) 1px -1px,
+      var(--background-color) -1px 1px;
+    ;
+  }
+}
+
 .card__picture {
   display: block;
   width: 100%;
