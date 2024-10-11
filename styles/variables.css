@@ -2,7 +2,7 @@
 
 :root {
   --basic-font-family: Inter-Variable, sans-serif;
-  --accent-font-family: PressStart2P, Courier New;
+  --accent-font-family: PressStart2P, fantasy;
 
   --card-text-font-weight: 400;
   --card-header-font-weight: 700;
@@ -10,6 +10,7 @@
   --background-color: #fff;
   --background-line-color: #ddd;
   --main-color: #000;
+  --button-color: #fff;
 
   --heart-color: #f00;
 

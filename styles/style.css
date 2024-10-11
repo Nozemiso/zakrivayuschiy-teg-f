@@ -23,7 +23,7 @@
   margin: auto;
   inline-size: fit-content;
 
-  font-family: var(--basic-font-family);
+  font-family: var(--basic-font-family), sans-serif;
   font-variation-settings: "wght" var(--card-text-font-weight);
   font-size: 18px;
 
@@ -47,7 +47,7 @@
 .header {
   margin: 100px auto 100px;
   text-align: center;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,11 +60,14 @@
 }
 
 .title {
+  display: block;
+  line-height: 1em;
   font-size: clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem);
   margin-block-end: 20px;
 }
 
 .subtitle {
+  display: block;
   font-size: clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem);
   line-height: 1em;
 }
@@ -97,14 +100,14 @@
   position: relative;
 }
 
-.the .theme-menu__button:disabled {
+.theme-menu__button:disabled {
   pointer-events: none;
-  color: rgb(from var(--main-color) r g b / 0.6);
+  opacity: 0.6;
   transition: 0.3s ease;
 }
 
 .theme-menu__button:hover {
-  color: rgb(from var(--main-color) r g b / 0.6);
+  opacity: 0.6;
   transition: 0.3s ease;
 }
 
@@ -132,7 +135,7 @@
 }
 
 .theme-menu__button:focus {
-  color: rgb(from var(--main-color) r g b / 0.6);
+  opacity: 0.6;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -156,10 +159,10 @@
 
 .card__picture-label {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   font-size: 14px;
   inset: 25px clamp(0.813rem, 1.127vw + 0.548rem, 1.563rem) auto auto;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   opacity: 0.5;
   mix-blend-mode: hard-light;
 }
@@ -189,10 +192,6 @@
   aspect-ratio: 1/1;
   background-size: cover;
   background-position: center;
-}
-
-.text {
-  font-variation-settings: "wght" var(--card-text-font-weight);
 }
 
 .card__content {
@@ -251,7 +250,7 @@
   display: block;
   background-color: transparent;
   border: 2px solid var(--main-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   line-height: 1em;
   transition: box-shadow 0.3s;
@@ -260,7 +259,6 @@
 
 .button__text {
   position: relative;
-  z-index: 1;
   transition: 0.5s ease-in-out;
 }
 
@@ -269,8 +267,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
   transition: 0.5s ease-in-out;
+  fill: var(--button-color);
+  color: var(--button-color);
+  mix-blend-mode: difference;
 }
 
 .basic-button::before {
@@ -287,12 +287,6 @@
   transition: width 0.5s ease-in-out;
 }
 
-.basic-button:hover {
-  color: var(--background-color);
-  fill: var(--background-color);
-  transition: 0.5s ease-in-out;
-}
-
 .basic-button:focus {
   outline: none;
   box-shadow: 2px 2px var(--main-color);
@@ -304,23 +298,39 @@
   border: 2px solid var(--main-color);
   background-color: var(--background-color);
   margin: 0 auto 100px;
-  fill: var(--main-color);
 }
 
 .save__picture {
   height: 21px;
   width: 21px;
-  margin-right: 8px;
 }
 
-.save-dialog {
+.save-button__content {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+@media (width < 1440px) {
+  .save__picture {
+    height: 28px;
+    width: 28px;
+  }
+
+  .save-button__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.save-dialog[open] {
   margin: auto;
   padding: 30px;
   width: fit-content;
 
   color: var(--main-color);
 
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
 }
 
@@ -353,6 +363,7 @@
 
 .save-dialog__text {
   display: block;
+  text-transform: uppercase;
   width: clamp(12.375rem, 3.38vw + 11.583rem, 14.625rem);
 }
 
