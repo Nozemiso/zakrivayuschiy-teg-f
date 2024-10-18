@@ -159,7 +159,7 @@
 
 .card__picture-label {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   font-size: 14px;
   inset: 25px clamp(0.813rem, 1.127vw + 0.548rem, 1.563rem) auto auto;
   font-family: var(--accent-font-family), fantasy;
@@ -335,7 +335,7 @@
 }
 
 @media (width < 1440px) {
-  .save-dialog {
+  .save-dialog[open] {
     padding: 30px 40px;
   }
 }
@@ -363,6 +363,7 @@
 
 .save-dialog__text {
   display: block;
+  line-height: 1.5;
   text-transform: uppercase;
   width: clamp(12.375rem, 3.38vw + 11.583rem, 14.625rem);
 }
